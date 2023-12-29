@@ -85,7 +85,7 @@ const usePost = () => {
         return;
       }
     }
-
+//
     const updatedData = posts.map((item) => {
       if (item.id === data.id) {
         return data;

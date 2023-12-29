@@ -97,3 +97,36 @@ const FeedSection = () => {
 };
 
 export default App;
+
+//start exercise here mentor model at 30 page in gg slide
+//import css
+// import "./App.css";
+
+// //
+// function App() {
+//   return (
+//     <div>
+//       <EnterData />
+//       <OutputData />
+//     </div>
+//   );
+// }
+
+// const EnterData = () => {
+//   return(
+//   <div>
+//     <h1>Enter Data</h1>
+//     <div>
+//       <img src="" alt="Your profile" />
+//       <p>Your Avatar</p>
+//       <p>You</p>
+//       <input type="text" placeholder="What's on your mind"></input>
+//       <button>Post</button>
+//     </div>
+//   </div>
+//   )
+// }
+
+// const OutputData = () => {
+
+// }

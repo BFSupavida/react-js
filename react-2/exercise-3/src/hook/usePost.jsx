@@ -59,6 +59,7 @@ const usePost = () => {
   };
 
   const get = () => {
+    
     /**
      * Retrieve the list of posts.
      * @returns {Array} The array of posts.

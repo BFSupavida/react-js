@@ -1,4 +1,5 @@
 import React from 'react';
+// import 
 
 function App() {
   return (
@@ -12,29 +13,31 @@ function App() {
 
 function Header() {
   return (
-    // Code for Header
-    // <Header />
+    <header>
+    <span>Turn on / off</span>
+    <p>Current Temperature: XX</p>
+    </header>
   );
 }
 
 function Content() {
   return (
-    // Code for Content
-    // <Content />
+    <Temperature/>
   );
 }
 
 function Temperature() {
   return (
-    // Code for Temperature
-    // <Temperature />
+    <p>11 OC</p>
   );
 }
 
 function Footer() {
   return (
-    // Code for Footer
-    // <Footer />
+    <footer>
+    <button>Down</button>
+    <button>Up</button>
+    </footer>
   );
 }
 

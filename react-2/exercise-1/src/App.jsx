@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  const members = [
+  const members1 = [
     {
       name: "Mock J",
       age: 99,
@@ -24,14 +24,38 @@ function App() {
       status: "Good",
     },
   ];
+  const membersN = [
+  {
+    name: "Mock J",
+    age: 99,
+    weight: 66,
+    running: 40,
+    status: "Balance",
+  },
+  {
+    name: "Mean Mock",
+    age: 55,
+    weight: 64,
+    running: 70,
+    status: "Extreme",
+  },
+  {
+    name: "Mock J",
+    age: 2,
+    weight: 8,
+    running: 12,
+    status: "Good na",
+  },
+  ];
 
   return (
     <div id="app">
       <h1>Enter Data</h1>
       <RunningForm />
-      <TableDisplay data={members} />
+      <TableDisplay data={members1} dataN={membersN} />
+      {/* //<TableDisplay data={[members1, membersN]} /> เขียนเป็น array */}
     </div>
-  );
+  )
 }
 
 const RunningForm = () => {
@@ -62,7 +86,9 @@ const RunningForm = () => {
   );
 };
 
-const TableDisplay = () => {
+const TableDisplay = (props) => {
+  const members2 = props.data;
+  const membersN2 = props.dataN;
   return (
     <>
       <h1>Entered Data</h1>
@@ -76,15 +102,40 @@ const TableDisplay = () => {
             <th>Good Running</th>
           </tr>
         </thead>
-        <TableBody />
+        <TableBody members3={members2} membersN3={membersN2}/>
       </table>
     </>
   );
 };
 
-const TableBody = () => {
+const TableBody = (props) => {
+  const members4 = props.members3;
+  const membersN4 = props.membersN3;
   return (
-    // code here
+    <>
+    {members4.map((member) => {
+    return (
+      <tr key={member.name}>
+        <td>{member.name}</td>
+        <td>{member.age}</td>
+        <td>{member.weight}</td>
+        <td>{member.running}</td>
+        <td>{member.status}</td>
+      </tr>
+    );
+  })}
+  {membersN4.map((member) => {
+    return (
+      <tr key={member.name}>
+        <td>{member.name}</td>
+        <td>{member.age}</td>
+        <td>{member.weight}</td>
+        <td>{member.running}</td>
+        <td>{member.status}</td>
+      </tr>
+    );
+  })}
+  </>
   )
 }
 

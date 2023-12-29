@@ -22,16 +22,68 @@ function App() {
     create(data);
   };
 
+  //update function
+  const updatePost = (content, image, id) => {
+    
+    
+    update(id, { content, image });
+  };
+ 
+
   return (
     <div id="app">
       <h1>Enter Data</h1>
-      <PostContainer create={createPost} />
+      <PostContainer create={createPost}/>
+      <PostUpdateContainer update={updatePost}/>
       <FeedSection posts={posts} removeHandler={remove} />
     </div>
   );
 }
 
-const PostContainer = ({ create }) => {
+
+const PostUpdateContainer = ({ update }) => {
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
+  const [id, setid] = useState("");
+
+  //update function
+  const updatePostInContainer = () => {
+    update(content, image, id);
+  };
+  // console.log(updatePostInContainer);
+
+  return (
+    <div className="post-container">
+{/* //other div right */}
+      <div className="post-header">
+        <input 
+          type="text"
+          placeholder="Put your id"
+          onChange={(event) => setid(event.target.value)}  />
+      </div>
+      <div className="post-content">
+        <textarea
+          className="post-input"
+          placeholder="What's on your mind?"
+          onChange={(ev) => setContent(ev.target.value)}
+        ></textarea>
+        <input
+          className="post-input"
+          type="text"
+          placeholder="image"
+          onChange={(ev) => setImage(ev.target.value)}
+        />
+      </div>
+      <div className="post-actions">
+        <button className="post-button" onClick={updatePostInContainer}>
+          Update
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const PostContainer = ({ create}) => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
 
@@ -41,6 +93,7 @@ const PostContainer = ({ create }) => {
 
   return (
     <div className="post-container">
+      <p>ID : {id}</p>
       <div className="post-header">
         <img className="post-avatar" src="avatar.jpg" alt="Your Avatar" />
         <div className="post-author">You</div>

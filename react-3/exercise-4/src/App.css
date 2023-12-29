@@ -46,6 +46,10 @@ body {
   margin-top: 5px;
 }
 
+.post-content {
+  margin-top: 5px;
+}
+
 .post-image {
   max-width: 100%;
   border-radius: 5px;
@@ -90,6 +94,15 @@ body {
 }
 
 .post-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  outline: none;
+}
+
+.picture-input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

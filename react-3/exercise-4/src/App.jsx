@@ -10,20 +10,22 @@ function App() {
     let id = `id-${Math.floor(Math.random() * 10000)}`; // generate id here by Math.random() (please use integer)
     let time = new Date().toDateString(); // generate timestamp here by (new Date().toDateString())
     const user = getUser();
-    let data = {};
+    let data = {
+
+    };
     create(data);
   };
 
   return (
     <div id="app">
       <h1>Enter Data</h1>
-      <PostContainer />
+      <PostContainer createPost={createPost}/>
       <FeedSection posts={posts} removeHandler={remove} />
     </div>
   );
 }
 
-const PostContainer = () => {
+const PostContainer = ({createPost}) => {
   return (
     <div className="post-container">
       <div className="post-header">
@@ -34,6 +36,12 @@ const PostContainer = () => {
         <textarea
           className="post-input"
           placeholder="What's on your mind?"
+        ></textarea>
+      </div>
+      <div className="picture-content">
+        <textarea
+          className="picture-input"
+          placeholder="What's your picture?"
         ></textarea>
       </div>
       <div className="post-actions">
